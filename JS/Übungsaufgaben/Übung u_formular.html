@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Übung u_formular</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      
+      function geklickt()
+      {
+         const ausgabefeld = document.getElementById("idAusgabe");
+         const eingabefeld1 = document.getElementById("Zahl1");
+         const eingabe1 = eingabefeld1.value;
+         const eingabefeld2 = document.getElementById("Zahl2");
+         const eingabe2 = eingabefeld2.value;
+         let z1 = parseFloat(eingabe1);
+         let z2 = parseFloat(eingabe2);
+         let summe = 0;
+
+         if(isNaN(z1))
+            z1 = 0;
+
+         else if(isNaN(z2))
+            z2 = 0;
+
+         summe = z1 +z2;
+
+         ausgabefeld.value = summe;
+
+      }
+
+   </script>
+</head>
+<body>
+   <form>
+        
+      <p><input id="Zahl1"> Erste Zahl</p>
+      <p><input id="Zahl2"> Zweite Zahl</p>
+      <p><input id="idButton" type="button" value="Berechne"></p>    
+      <p><input id="idAusgabe" disabled> Ausgabe</p>
+        
+   </form>
+   
+   <script>
+     
+      const bu = document.getElementById("idButton");
+      bu.addEventListener("click", geklickt);
+      
+   </script>
+</body>
+</html>

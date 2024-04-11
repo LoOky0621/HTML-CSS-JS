@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Übung, Destrukturierung</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      function summe_und_mittelwert(a, b, c)
+      {
+         const su = a + b + c;
+         const mw = su / 3;
+         return [su, mw];
+      }
+   </script>
+</head>
+<body>
+   <script>
+      const x = parseFloat(prompt("Erste Zahl:"));
+      const y = parseFloat(prompt("Zweite Zahl:"));
+      const z = parseFloat(prompt("Dritte Zahl:"));
+      const [summe, mittelwert] = summe_und_mittelwert(x, y, z);
+      document.write("Die Summe von " + x + ", " + y + " und " + z + " ist " + summe + "<br>");
+      document.write("Der Mittelwert von " + x + ", " + y + " und " + z + " ist " + mittelwert);
+   </script>
+</body>
+</html>
