@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Ausnahmen werfen mit throw</title>
+        <link rel ="stylesheet" href="js4.css">
+    </head>
+    <body>
+        <script>
+            
+            const zahl = parseFloat(prompt(
+                "Bitte eine Zahl > 0 eingeben"));
+
+            try
+            {
+                if(isNaN(zahl))
+                    throw "Keine gültige Zahl";
+                if(zahl <= 0)
+                    throw "Zahl zu klein";
+                document.write("Zahl: " + zahl);        
+            }    
+            catch(fehlerobjekt)
+            {
+                alert(fehlerobjekt);
+            }
+
+            /* Fehlersituationen selbst erzeugen. Bei Eintritt eines 
+            solchen Falles kann mit throw eine Ausnahme geworfen werden.
+            Sie profitieren dabei von dem Ablauf der Ausnahmebehandlung,
+            der dafür sorgt, dass das Programm in den catch-Block 
+            verzweigt. */
+
+        </script>      
+    </body>
+</html>      

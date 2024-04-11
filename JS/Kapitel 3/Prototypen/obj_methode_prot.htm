@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Methoden</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      function Fahrzeug(f, g)
+      {
+         this.farbe = f;
+         this.geschwindigkeit = g;
+         this.beschleunigen = fahrzeugBeschleunigen;
+         this.lackieren = function(f) { this.farbe = f; };
+         this.toString = fahrzeugAusgeben;
+      }
+
+      function fahrzeugBeschleunigen(wert)
+      {
+         this.geschwindigkeit += wert;
+      }
+
+      function fahrzeugAusgeben()
+      {
+         return "Farbe: " + this.farbe
+              + ", Geschwindigkeit: " + this.geschwindigkeit;
+      }
+   </script>
+</head>
+<body><p>
+   <script>
+      const dacia = new Fahrzeug("Rot", 50);
+      document.write("Farbe: " + dacia.farbe
+         + ", Geschwindigkeit: " + dacia.geschwindigkeit + "<br>");
+
+      dacia.beschleunigen(35);
+      dacia.lackieren("Blau");
+      document.write(dacia);
+   </script></p>
+</body>
+</html>

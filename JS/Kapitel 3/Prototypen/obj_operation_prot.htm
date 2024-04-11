@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Operationen</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      function Fahrzeug(f, g)
+      {
+         this.farbe = f;
+         this.geschwindigkeit = g;
+         this.lackieren = fahrzeugLackieren;
+         this.beschleunigen = fahrzeugBeschleunigen; 
+         this.toString = fahrzeugAusgeben;
+      }
+
+      function fahrzeugLackieren(f)
+      {
+         this.farbe = f;
+      }
+
+      function fahrzeugBeschleunigen(wert)
+      {
+         this.geschwindigkeit += wert;
+      }
+
+      function fahrzeugAusgeben()
+      {
+         return "Farbe: " + this.farbe
+            + ", Geschwindigkeit: " + this.geschwindigkeit;
+      }
+   </script>
+</head>
+<body><p>
+   <script>
+      const dacia = new Fahrzeug("Rot", 50);
+      document.write("Schreibweise mit Punkt: " + dacia.farbe + " "
+         + dacia.geschwindigkeit + "<br>");
+      document.write("Schreibweise mit [ und ]: " + dacia["farbe"] + " "
+         + dacia["geschwindigkeit"] + "<br>");
+      document.write("Schreibweise mit toString(): " + dacia + "<br><br>");
+
+      const renault = dacia;
+      document.write("Zweiter Verweis: " + renault + "<br>");
+      if(renault == dacia)
+         document.write("Dasselbe Objekt<br>");
+      const simca = new Fahrzeug("Rot", 50);
+      if(simca != dacia)
+         document.write("Nicht dasselbe Objekt<br><br>");
+
+      if(dacia instanceof Fahrzeug)
+         document.write("'instanceof': Objekt dacia hat den "
+            + " Prototyp Fahrzeug<br><br>");
+
+      document.write("'typeof':<br>"
+         + "Fahrzeug: " + typeof Fahrzeug + "<br>"
+         + "dacia: " + typeof dacia + "<br>"
+         + "farbe: " + typeof dacia.farbe + "<br>"
+         + "geschwindigkeit: " + typeof dacia.geschwindigkeit + "<br>"
+         + "beschleunigen: " + typeof dacia.beschleunigen + "<br>"
+         + "lackieren: " + typeof dacia.lackieren + "<br><br>");
+
+      if("farbe" in dacia)
+         document.write("'in': farbe ist Member<br>");
+      if("beschleunigen" in dacia)
+         document.write("'in': beschleunigen ist Member<br>");
+      if("lackieren" in dacia)
+         document.write("'in': lackieren ist Member<br>");
+      if(!("leistung" in dacia))
+         document.write("'in': leistung ist kein Member<br><br>");
+
+      function aendern(x)
+      {
+         x.beschleunigen(10);
+         return x;
+      }
+      const lada = aendern(dacia);
+      document.write(lada + "<br><br>");
+
+      delete dacia.geschwindigkeit;
+      document.write("Werte der Member:<br>"
+         + "farbe: " + dacia.farbe + "<br>"
+         + "geschwindigkeit: " + dacia.geschwindigkeit + "<br>"
+         + "lackieren: " + dacia.lackieren + "<br>"
+         + "leistung: " + dacia.leistung);
+   </script></p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Ausnahmebehandlung mit try catch</title>
+        <link rel ="stylesheet" href="js4.css">
+    </head>
+    <body>
+        <script>
+            
+            /* Die Ausnahmebehandlung mit try catch ermöglicht es Ihnen, 
+            Ihr Programm vor einem Abbruch zu bewahren. */
+
+            const y = 42;
+
+            try
+            {
+                document.write(x + "<br>");
+                document.write(y + "<br>");
+            }
+            catch(e)
+            {
+                alert(e);
+            }
+            finally
+            {
+                document.write("Das wird auf jeden Fall gemacht<br>");
+            }
+
+            /* Sollte tatsächlich ein Fehler auftreten, verzweigt das Programm in einem catch-Block,
+            in dem der Fehler gefangen wird. Dort kann eine Fehlermeldung ausgeben werden, oder es 
+            können alternative Anweisungen durchlaufen werden, die die Folgen des Fehlers umgehen.*/
+
+        </script>      
+    </body>
+</html>      

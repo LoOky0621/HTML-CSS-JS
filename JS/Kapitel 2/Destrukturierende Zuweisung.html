@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Destrukturierende Zuweisung</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            function tauschen(x, y)
+            {
+                document.write("Nach der Übergabe: "
+                    + x + " " + y + "<br>");
+                const temp = x;
+                x = y;
+                y = temp;
+                /* In der Funktion tauschen() heißen die beiden Parameter x und y. Mithilfe
+                einer dritten Variablen werden sie miteinander getauscht. Die Funktion lie-
+                fert die beiden Variablen x und y zurück, die wie ein Feld innerhalb von 
+                rechteckigen Klammern stehen. Damit wird dafür gesorgt, dass an der Aufruf-
+                stelle x an a und y an b übergeben wird. */ 
+                document.write("Vor der Rückgabe: " + x + " " + y + "<br>");
+                return [x, y];    
+            }
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            let a = 7, b = 12;
+            document.write("Vor dem Tauschen: " + a + " " + b + "<br>");
+            [a, b] = tauschen(a, b);
+            document.write("Nach dem Tauschen: " + a + " " + b);
+
+        </script>      
+    </body>
+</html>      

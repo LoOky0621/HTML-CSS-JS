@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Formular senden</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      function senden()
+      {
+         const tx = document.getElementById("idText");
+         const eintrag = tx.value;
+         alert("Formular wird gesendet\nEintrag: " + eintrag);
+      }
+
+      function zuruecksetzen()
+      {
+         alert("Formular wird zurückgesetzt");
+      }
+   </script>
+</head>
+<body>
+   <!--Das Formular besitzt die eindeutige ID idForm. Der Wert post
+   für das Attribut method dient zum Festlegen der sicheren Übertragungs-
+   methode Post, die in allen Beispieln gewählt wird. Der Wert des Attributs
+   action verweist auf das antwortende PHP-Programm. Es wird vorausgesetzt, 
+   dass es im selben Verzeichnis liegt.-->
+   <form id="idForm" method="post" action="form_senden.php">
+      <!--Das Eingabefeld besitzt die eindeutige ID idText, die für den Zugriff
+      auf den Inahlt des Felds mit JavaScript benötigt wird. Zudem besitzt das
+      Eingabefeld das Attribut name, hier mit dem Wert eintrag, das für den Zugriff
+      auf den Inhalt des Felds mit PHP benötigt wird-->
+      <p><input id="idText" name="eintrag"> Text eintragen</p>
+      <!--Die Werte submit bzw. reset für das Attribut type der beiden input-Elemente
+      kennzeichnen diese als Schaltfläche zum Senden bzw. Zurücksetzten des Formulars.-->
+      <p><input type="submit"> <input type="reset"></p>
+   </form>
+   <script>
+      /*Die Variable fo verweist auf das Formular. Mithilfe der Methode addEvent-
+      Listener() werden die beiden Ereignisse submit und reset mit den benannten 
+      Funktionen senden() bzw. zuruecksetzen() verbunden.*/
+      const fo = document.getElementById("idForm");
+      fo.addEventListener("submit", senden);
+      fo.addEventListener("reset", zuruecksetzen);
+   </script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Vererbung</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      function Fahrzeug(f, g)
+      {
+         this.farbe = f;
+         this.geschwindigkeit = g;
+         this.beschleunigen = fahrzeugBeschleunigen; 
+         this.toString = fahrzeugAusgeben;
+      }
+
+      function fahrzeugBeschleunigen(wert)
+      {
+         this.geschwindigkeit += wert;
+      }
+
+      function fahrzeugAusgeben()
+      {
+         return "Farbe: " + this.farbe
+            + ", Geschwindigkeit: " + this.geschwindigkeit;
+      }
+
+      function Lastwagen(f, g, n)
+      {
+         this.constructor(f, g);
+         this.nutzlast = n;
+         this.beladen = lastwagenBeladen;
+         this.toString = lastwagenAusgeben;
+      }
+
+      function lastwagenBeladen(wert)
+      {
+         this.nutzlast += wert;
+      }
+
+      function lastwagenAusgeben()
+      {
+         return "Farbe: " + this.farbe + ", Geschwindigkeit: "
+            + this.geschwindigkeit + ", Nutzlast: " + this.nutzlast;
+      }
+
+      Lastwagen.prototype = new Fahrzeug();
+   </script>
+</head>
+<body><p>
+   <script>
+      const iveco = new Lastwagen("Orange", 30, 15);
+      document.write(iveco + "<br>");
+
+      iveco.beschleunigen(50);
+      iveco.beladen(25);
+      document.write(iveco);
+   </script></p>
+</body>
+</html>

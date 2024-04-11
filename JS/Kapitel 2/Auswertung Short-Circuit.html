@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Auswertung Short-Circuit</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            function nachbarLinks(p)
+            {
+                document.write("Funktion nachbarLinks()<br>");
+                if(p > 1)
+                    return true;
+                else
+                    return false;    
+            }
+
+            function nachbarRechts(p)
+            {
+                document.write("Funktion nachbarRechts()<br>");
+                if(p < 10)
+                    return true;
+                else
+                    return false;
+            }
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            /* Die erste Logische Verknüpfung prüft, ob es bezogen auf Position 5 
+            mindestens einen Nachbarn gibt. Da es bereits einen Linken Nachbaren gibt,
+            wird die Funktion nachbarRechts() nicht aufgerufen.*/
+            if(nachbarLinks(5) || nachbarRechts(5))
+                document.write("Mindestens ein Nachbar vorhanden<br>");
+            else
+                document.wirte("Kein Nachbar vorhanden<br>");
+            document.write("<br>");
+            
+            /*Bei der zweiten Logischen Verknüpfung wird untersucht, ob es bezogen
+            auf Position 1 beide Nachbarn gibt. Da der linke Nachbar bereits
+            nicht vorhanden ist, wird die Funktion nachbarRechts() auch hier nicht
+            aufgerufen.*/
+            if(nachbarLinks(1) && nachbarRechts(1))
+                document.write("Beide Nachbaren vorhanden<br>");
+            else
+                document.write("Nicht beide Nachbarn vorhanden<br>");
+            document.write("<br>");
+            
+            /*Die dritte logische Verknüpfung wird untersucht, ob es bezogen auf
+            Position 5 beide Nachbarn gibt. Da es einen linken Nachbarn gibt, wird
+            auch die Funktion nachbarRechts() aufgerufen.*/
+            if(nachbarLinks(5) && nachbarRechts(5))
+                document.write("Beide Nachbarn vorhanden<br>");
+            else
+                document.write("Nicht beide Nachbarn vorhanden<br>");
+
+        </script>      
+    </body>
+</html>      

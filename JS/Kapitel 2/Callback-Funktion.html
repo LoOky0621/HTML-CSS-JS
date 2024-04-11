@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Callback-Funktion</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            function quadrat(x)
+            {
+                return x * x;
+            }
+
+            function ausgabe(von, bis, schritt, fkt)
+            {
+                for(let p = von; p < bis + schritt / 2.0; p += schritt)
+                    document.write(p + " " + fkt(p) + "<br>");
+                document.write("<br>");    
+            }
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            ausgabe(5.0, 15.0, 2.5, quadrat);
+            ausgabe(3.0, 7.0, 1.0, function(p) { return 1 / p;});
+
+        </script>      
+    </body>
+</html>      

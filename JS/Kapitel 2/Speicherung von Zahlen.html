@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Speicherung von Zahlen</title>
+        <link rel ="stylesheet" href="js4.css">
+    </head>
+    <body>
+        <script>
+            
+            let zahl;
+            zahl = 42;
+            const nochEineZahl = zahl + 30.8;           //42 + 30.8 = 72.8
+            const kleineZahl = -3.7e-3;                 //-3.7 mal 10 hoch -3 = 0.0037
+            const grosseZahl = 5.2e6;                   //5.2 mal 10 hoch 6 = 5200000
+            const vieleZiffern = 5_530_755.383_725;     // _ (Unterstrich) = Nummerischer Separator
+
+            document.write("<p>Erste Zahl: "+ zahl +"<br>");
+            document.write("<p>Noch eine Zahl: "+ nochEineZahl +"<br>");   
+            document.write("<p>Addition falsch: "+ nochEineZahl + 25 +"<br>");
+            document.write("<p>Addition richtig: "+ (nochEineZahl + 25) +"<br>");     
+            document.write("<p>Kleine Zahl: "+ kleineZahl +"<br>");    
+            document.write("<p>Große Zahl: "+ grosseZahl +"<br>");
+            document.write("<p>Viele Ziffern: "+ vieleZiffern +"<br>");    
+
+        </script>      
+    </body>
+</html>     

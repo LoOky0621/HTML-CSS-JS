@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Funktion mit Rückgabewert</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            function summe(a, b)
+            {
+                const ergebnis = a + b;
+                return ergebnis;
+            }
+
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            const x = 3, y = 5;
+            const z = summe(x, y);
+            document.write("Summe: " + z + "<br>");
+            /* Beim ersten Aufruf der Funktion summe() werden die aktuellen Werte von x und y
+            an die Funktion übergehen. Die Summe wird zurückgeliefert und in der Variablen z 
+            gespeichert. Diese wird anschließend ausgegeben.*/
+            document.write("Summe: " + summe(14, 20/4));
+            /* Zur Berechnung und Ausgabe der zweiten Summe wird die Methode document.write()
+            aufgerufen. Innerhalb des Aufrufs wird wiederrum die Funktion summe() aufgerufen.
+            Es werden zwei Zahlenwerte übergeben. Der Rückgabewert wird unnmittelbar in die
+            Ausgabe eingebaut.*/
+
+        </script>      
+    </body>
+</html>      

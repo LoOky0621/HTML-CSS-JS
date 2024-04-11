@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Fehler finden mit onerror</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+            
+            function fehlerbehandlung(fehler, datei, zeile)
+            {
+                alert("Fehler: " + fehler + "\nDatei: " + datei
+                    + "\nZeile: " + zeile);
+            }
+
+        </script> 
+    </head>
+    <body>
+        <script>
+            
+            onerror = fehlerbehandlung;
+            const y = 42;
+            document.write(x + "<br>");
+            document.write(y + "<br>");
+            /* Das Ereignis onerror tritt bei einem Fehler auf. Als Folge wird 
+            diejenige Funktion aufgerufen, die dem Ereignis zugewiesen wurde.
+            Hier ist dies die Funktion fehlerbehandlung(). Funktionen werden meist
+            im head des Dokuments definiert. Der Funktion fehlerbehandlung() werden
+            Informationen zu dem aufgetretenen Fehler übermittelt, die Sie mithilfe 
+            von alert() ausgeben können. */
+
+        </script>      
+    </body>
+</html>      

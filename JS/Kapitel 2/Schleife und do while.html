@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Schleife und do while</title>
+        <link rel ="stylesheet" href="js4.css">
+    </head>
+    <body>
+        <script>
+            
+            const zufall = Math.random() * 20 + 1;
+            const a = Math.floor(zufall);
+            const b = Math.floor(Math.random() * 20 + 1);
+            const summe = a + b;
+            let zahl;
+
+            do
+            {
+                const eingabe = prompt(a + " + " + b + " = ");
+                zahl = parseInt(eingabe);
+                if(zahl != summe)
+                    alert("Bitte noch einmal versuchen");
+            }
+            while(zahl != summe);
+
+            document.write(a + " + " + b + " = " + summe);
+
+        </script>      
+    </body>
+</html>      

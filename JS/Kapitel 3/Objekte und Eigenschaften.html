@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Objekte und Eigenschaften</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            /*Das Schlüsselwort class leitet die Definition der Klasse ein. Beachten sie,
+            dass nach dem Namen der Klasse keine runden Klammern folgen, wie diese bei 
+            einer Funktion der Fall wäre.*/
+            class Fahrzeug
+            {
+                /*Die Konstruktormethode dient zum Erzeugen eines Objektes der Klasse. Sie
+                besitzt den festgelegten Namen constructor. Ihre Parameter entsprechen den
+                Eingenschaften eines Objekts der Klasse.*/
+                constructor(f, g)
+                {
+                    this.farbe = f;
+                    this.geschwindigkeit = g;
+                }
+                /*Innerhalb der Kostruktormethode werden zwei Eigenschaften festgelegt,
+                jewals mit dem Schlüsselworts this, dem Operator .(Punkt) und einem Na-
+                men. Den beiden Eigenschaften werden die Werte zugewiesen, die beim Er-
+                zeugen eines Objekts der Klasse Fahrzeug() als Parameter übergeben wer-
+                den. Das Schlüsselwort this verweist auf dieses Objekt, also auf das 
+                aktuelle Objekt. Damit wird erreicht, dass auf eine Eigenschaft des 
+                aktuellen Objekts zugegriffen wird oder eine Methode für das aktuelle
+                Objekt ausgeführt wird.*/
+            }
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            const dacia = new Fahrzeug("Rot", 50);
+            document.write("Farbe: " + dacia.farbe
+            + ", Geschwindigkeit: " + dacia.geschwindigkeit + "<br>");
+            /*Im Programm wird die unveränerliche Variable dacia deklariert. Ihr wird
+            mithilfe des Schlüsselworts new eine Verweis auf ein neues Objekt der 
+            Klasse Fahrzeug() zugewiesen. Dabei werden zwei Werte als Anfangswerte der
+            beiden Eigenschaften übergeben. Sie können anschließend mithilfe er Punkt-
+            schreibweise auf die Eigenschaften des Objekts zugreifen. Die Werte können
+            ausgegeben oder verändert werden.*/
+
+            dacia.geschwindigkeit = 75;
+            document.write("Farbe: " + dacia.farbe
+            + ", Geschwindigkeit: " + dacia.geschwindigkeit + "<br>");
+
+            let renault = new Fahrzeug("Gelb", 65);
+            /*Anschließend wird die veränderliche Variable renault deklariert. Dieser
+            Variable wird zweimal nacheinander ein Objekt der Klasse Fahrzeug zugewiessen.
+            Diese Objekte verfügen ebenfall über die Eigenschaften farbe und geschwindig-
+            keit. Die Eigenschaftswerte der Objekte unterscheiden sich allerdings.*/
+            renault = new Fahrzeug("Blau", 85);
+            /*Bei der Deklaration von Variablen, die auf Objekte verweisen, sieht es bei
+            Objekten aus wie bei Feldern: Verweist eine unveränderliche Variable auf ein
+            Objekt, ist nur der Verweis unveränderlich. Sie können die einzelnen Elemente
+            des Objekts verändern, aber der Variablen kein anderes Objekt zuweisen.*/
+            document.write("Farbe: " + renault.farbe
+            + ", Geschwindigkeit: " + renault.geschwindigkeit);
+            
+
+        </script>      
+    </body>
+</html>      

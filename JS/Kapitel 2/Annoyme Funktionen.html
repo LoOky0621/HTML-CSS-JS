@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Annoyme Funktionen</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            /*Die erste anonyme Funktion gibt den Text HalloWelt aus. Sie wird ohne 
+            Parameter definiert. Der Verweis auf diese Funktion wird der Variablen 
+            gruss zugewiesen.*/
+            const gruss = function()
+            {
+                document.write("Hallo Welt<br>");
+            }
+
+            /*In der zweiten anonymen Funktion werden die beiden übergabenen Para-
+            meter addiert. Das Ergebinis wird als Rückgabewert geliefert. Der Verweis
+            auf die Funktion wird der Variablen summe zugewiesen.*/
+            const summe = function(a, b)
+            {
+                const s = a + b;
+                return s;
+            }
+
+            /*Sie können den Verweis auf eine Funktion an eine weitere Funktion über-
+            geben. Dies ist hier beim Aufruf der Funktion oskar() geschehen. Innerhalb
+            der Funktion oskar() verweist der Name begruessung() zum selben Ergebnis.*/
+            function oskar(begruessung)
+            {
+                begruessung();
+            }
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            gruss();
+            oskar(gruss);
+
+            const ergebnis = summe(35, 7);
+            document.write(ergebnis + "<br>");
+
+            const addieren = summe;
+            /*Der Wert einer Variablen, die auf eine Funktion verweist, kann einer
+            anderen Variablen zugewiesen werden. Dies sehen Sie bei der Variablen 
+            addieren. Anschließend können Sie die zweite anonyme Funktion mithilfe
+            des Aufrufs addieren(...) starten.*/
+            document.write((function() { return "Guten Tag<br>"; })());
+            /*Die erste Funktion besitzt keinen Parameter und liefert den Text 
+            "Guten Tag" zurück. Der zurückgelieferte Text wird mithilfe von
+            document.write() ausgegeben.*/
+            document.write((function(a, b) { return a * b; })(12, 6));
+            /*Die zweite anonyme Funktion besitzt die beiden Parameter a und b und
+            liefert das Produkt dieser beiden Parameter zurück. Sie wird hier mit 
+            den Werten 12 und 6 aufgerufen. Auch hier wird das Rückgabeergebnis
+            mithilfe von document.write() ausgegeben.*/
+            
+        </script>      
+    </body>
+</html>      

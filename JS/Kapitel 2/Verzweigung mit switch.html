@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Verzweigung mit switch</title>
+        <link rel ="stylesheet" href="js4.css">
+    </head>
+    <body>
+        <script>
+            
+            const land = prompt("Bitte ein Land eingeben:");
+            let stadt;
+
+            switch(land)
+            {
+                case "Italien":
+                    stadt = "Rom";
+                    break;
+                case "England":
+                case "Wales":
+                case "Schottland":
+                    stadt = "London";
+                    break;
+                default:
+                    stadt = "Nicht bekannt";            
+
+            }
+
+            document.write("Hauptstadt des Staates: " + stadt);
+
+        </script>      
+    </body>
+</html>      

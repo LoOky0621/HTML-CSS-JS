@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Rechenoperatoren</title>
+        <link rel ="stylesheet" href="js4.css">
+    </head>
+    <body>
+        <script>
+            
+            let z;
+            z = 2 + 4 - 2.5;                                            //Berechnung von links nach rechts
+            document.write("2 + 4 - 2.5 = " + z + "<br>");
+            z = 2 + 4 * 3 - 6 / 2;                                      //Punkt vor strich danach von links
+            document.write("2 + 4 * 3 - 6 / 2 = " + z + "<br>");
+            z = (2 + 4) * (3 - 6) / 2;                                  //Klammer hat höhere Prio. wie punkt
+            document.write("(2 + 4) * (3 - 6) / 2 = " + z + "<br>");
+            z = 13.5 % 5;                                               //13.5 wird Dividiert durch 5 (2) und
+            document.write("13 % 5 = " + z + "<br><br>");               //der rest ergibt 3.5
+
+    
+            z = 6;                                                      //z wird auf 6 gesetzt
+            document.write("z = " + z + "<br>");
+            z = -z;                                                     //z wird mit -1 multipliziert
+            document.write("z = -z | z = " + z + "<br>");
+            z = z * 5;                                                  //z hat immer noch den Wert -6
+            document.write("z = z * 5 | z = " + z + "<br><br>");        //dieser wird mit 5 multipliziert
+            
+            
+            //Der Wert vor dem Operator ** wird Basis genannt, der Wert nach dem Operator Exponent.
+            z = 2.5 ** -3.5;                                            //2.5 hoch -3.5
+            document.write("2.5 ** -3.5 = " + z + "<br>");
+            z = (-2.5) ** -3;                                           //Beim negativen Basiswert muss
+            document.write("(-2.5) ** -3 = " + z + "<br>");             //eine Klammer gesetzt werden
+            z = (-2) ** -3.5;                                             //Potenz einer negativen Zahl mit einer negativen Zahl, die
+            document.write("(-2) ** -3.5 = " + z + "<br>");               //Nachkommastellen besitzt ist mathematisch nicht gestattet
+            z = 4 * 3 ** 2;                                             //Potenz höhere Priorität wie Multiplikation.
+            document.write("4 * 3 ** 2 = " + z + "<br>");               //4 * 9 = 36
+
+        </script>      
+    </body>
+</html>     

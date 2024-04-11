@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Rekursive Funktionen</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            function halbieren(wert, i)
+            {
+                /*Die Funktion halbieren() wird erstmals mit dem Startwert 3.5 aufgerufen.
+                Der Wert wird ausgegeben und anschließend halbiert. Ist der Wert größer als
+                der Grenzwert 0.1, ruft sich die Funktion wieder selbst auf. Ist der Grenz-
+                wert erreicht oder unterschritten, endet die Rekursion. Die Variable i dient
+                hier als Zähler für die Anzahl der Aufrufe.*/
+                document.write(i + ") " + wert + "<br>");
+                wert /= 2;
+                i++;
+                if(wert > 0.1)
+                    halbieren(wert, i);
+                document.write("Ende " + (i - 1) + ")<br>");    
+            }
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            const wert = 3.5, i = 1;
+            halbieren(wert , i);
+            document.write("Ende Programm");
+            /*Im vorliegenden Beispiel ist das Ende der Rekursion beim sechsten Aufruf
+            erreicht. Der Durchlauf der Funktion endet erstmals. Der Ablauf Kehrt zum 
+            Ende des Fünften Durchlaufs zurück, anschließend zum Ende des vierten Durch-
+            laufs usw. bis zum Ende des ersten Durchlaufs. Als Letztes wird das Ende 
+            des Programms erreicht.*/
+
+        </script>      
+    </body>
+</html>      

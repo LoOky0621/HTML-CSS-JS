@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Pflichtfelder und Kontrolle</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      function senden(e)
+      {
+        const pw = document.getElementById("idPasswort").value;
+        if(pw.length < 3 || pw.length > 8)
+        {
+            /*Zudem wird die Methode perventDefault()*/
+            alert("Passwort muss 3-8 Zeichen umfassen");
+            e.preventDefault();
+            retrun false;
+        }
+        alert(document.getElementById("idBenutzername").value
+            + "\n" + document.getElementById("idPasswort").value
+            + "\n" + document.getElementById("idBemerkung").value);
+      }
+      
+   </script>
+</head>
+<body>
+    <form id="idForm" method="post" action="form_text.php">
+        <!--Die beiden Eingabefelder für Benutzernamen und das Passwort besitzen
+        das Attribut required mit dem Wert required (deutsch: erforderlich). Die
+        Felder dürfen daher nicht leer gelassen werden. Ist keines der beiden
+        Eingabefelder leer, wird das Ereignis submit ausgelöst.-->
+        <p><input id="idBenutzername" name="benutzername"
+            required="required"> Benutzername (*)</p>
+        <!--Der Wert password für das Attribut type eines input-Elements macht
+        dieses Element zu einem Eingabefeld für ein Passwort. Nur die Anzahl der
+        eingegebenen Zeichen ist zu erkennen. Die Zeichen selbst sind nicht zu 
+        lesen.-->
+        <p><input id="idPasswort" name="passwort"
+            type="password" required="required"> Passwort (*)</p>
+        <!--Ein mehrzeiliges Eingabefeld wird mithilfe eines textarea-Containers
+        dargestellt. Die Größe richtet sich zu Beginn nach den Werten Dder Attribute
+        rows(deutsch: Zeilen) und cols (detusch: Spalten). Meist lässt sie sich im 
+        Browser verändern. Der Eintrag steht in JavaScript über die Eigenschaft value
+        zur Verfügung, wie bei einzeiligen Eingabefeldern.-->
+            <p><textarea id="idBemerkung" rows="3" cols="25"
+            name="bemerkung">(Inhalt)</textarea> Bemerkung</p>
+        <p><input type="submit"><input type="reset"></p>
+        <p> (*) = Pflichtfeld</p>            
+    </form>
+   <script>
+
+        document.getElementById("idForm").addEventListener
+            ("submit", function(e){return senden(e);});
+
+   </script>
+</body>
+</html>
+
+
+
+

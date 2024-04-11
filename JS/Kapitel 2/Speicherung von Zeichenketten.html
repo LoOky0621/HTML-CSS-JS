@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Speicherung von Zeichenketten</title>
+        <link rel ="stylesheet" href="js4.css">
+    </head>
+    <body>
+        <script>
+            
+            let halloText;                                  //let = veränderliche Variable
+            halloText = "Hallo Welt";                       //Zuweiung der Variable halloText (Hallo Welt)
+            document.write("Text: "+ halloText +"<br>");
+            halloText = "Guten Tag";                        //Neue Zuweiung der Variable halloText (Guten Tag)
+            document.write("Text: "+ halloText +"<br>");
+
+            let text2 = "Deklaration und Wert";             //Deklaration und Zuweisung innheralb einer Anweisung
+            document.write("Text: "+ text2 +"<br>");
+
+            let text3 = 'Mit einfachen Hochkommata';        //Text kann auch in einfachen Hochkommata notiert werden
+            document.write("Text: "+ text3 +"<br>");
+
+            let text4;                                      //Variable wird deklariert, aber sie erhölt kein Wert
+            document.write("Text: "+ text4 +"<br>");        //Folge = Fehler (undefined)
+
+            // document.write("Text: " + text5 + "<br>");   //Fehler da eine Ausgabe mit einer Undeklarierten Variable erfolgt
+            // text5 = "Ohne Deklaration";
+            // document.write("Text: " + text5 + "<br>");
+
+            const text6 = "Kann nicht geändert werden";     //const = Konstante Variable die nicht geändert werden kann
+            document.write("Text: " + text6 + "<br>");
+            // text6 = "Nicht erlaubt";
+            document.write("Ende");
+
+        </script>      
+    </body>
+</html>     

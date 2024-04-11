@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Vererben</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            /*Der Konstrukto der Basisklasse Fahrzeug erwartet zwei Parameter für die
+            Anfangswerte der Eigenschaften farbe und geschwindkeit. Der konstruktor der
+            abgeleiteten Klasse Lastwagen erwartet drei Parameter. Dabei handelt es 
+            sich um die Anfangswerte für die Eigenschaft farbe und geschwindkeit der
+            Basisklasse Fahrzeug und für die Eigenschaften nutzlast der abgeleiteten
+            Klasse Lastwagen.*/
+            class Fahrzeug
+            {
+                    constructor(f, g)
+                    {
+                        this.farbe = f;
+                        this.geschwindigkeit = g;
+                    }
+
+                    beschleunigen(wert)
+                    {
+                        this.geschwindigkeit += wer;
+                    }
+
+                    toString()
+                    {
+                        return "Farbe: " + this.farbe + "; Geschwindigkeit: "
+                            + this.geschwindigkeit;
+                    }
+            }
+
+            class Lastwagen extends Fahrzeug
+            {
+                constructor(f, g, n)
+                {   
+                    /*Die Methode super() ruft innhalb eines Konstruktors den jeweiligen
+                    Konstruktor der Basisklasse auf. Auf diese Weise werden hier die ersten
+                    beiden Parameter an den Konstruktor der Basisklasse weitergereicht.
+                    Der dritte Parameter wird der Eigenschaft nutzlast zugewiesen. Auf diese
+                    Weise erhalten alle Eigenschaften des Objekts der Klasse Lastwagen einen
+                    Anfangswert*/
+                    super(f, g);
+                    this.nutzlast = n;
+                }
+
+                beladen(wert)
+                {
+                    this.nutzlast += wert;
+                }
+
+                toString()
+                {
+                    /*Zudem gibt es den Verweis super (ohne Klammern), der für den Zugriff aus
+                    die Eigenschaften und Methoden der Basisklasse dient. In der Methode
+                    toString() der abgeleiteten Klasse Lastwagen wird damit die gleichnamige
+                    Methode der Basisklasse Fahrzeug aufgerufen: super.toString().*/
+                    return super.toString() + ", Nutzlast: "
+                        +this.nutzlast;
+                }
+            }
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            /*Im Programm wird ein Objekt der Klasse Lastwagen mit drei Anfangswerten
+            erzeugt und ausgegeben. Es wird durch den Aufruf der Methode beschleunigen()
+            der Basisklasse und durch den Aufruf der Methode beladen() der abgeleiteten
+            Klasse verändert. Anschließend wird es erneut ausgegeben.*/
+            const iveco = new Lastwagen("Orange", 30, 15);
+            document.write(iveco + "<br>");
+
+            iveco.beschleunigen(50);
+            iveco.beladen(25);
+            document.write(iveco);
+
+        </script>      
+    </body>
+</html>      

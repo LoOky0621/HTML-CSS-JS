@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Senden und Zurücksetzen</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      
+      function geklickt()
+      {
+         const eingabefeld = document.getElementById("idEingabe");
+         const eingabe = eingabefeld.value;
+         alert("Klick: " + eingabe);
+         const ausgabefeld = document.getElementById("idAusgabe");
+         ausgabefeld.value = "Klick: " + eingabe;
+      }
+
+   </script>
+</head>
+<body>
+   <form>
+        <!--Die Elemente eines Formulars stehen in einem from-Container. Ein
+        einfaches Element des Typs input entspricht einem einzeiligen Eingabefeld.
+        Wird für das Attribut type eines input-Elements der Wert button angegeben,
+        wird eine Schaltfläche dargestellt. Der Wert des Attributs value entspricht
+        dem Text auf der Schaltfläche.-->  
+      <p><input id="idEingabe"> Eingabe</p>
+        <!--In der Funktion geklickt() verweist die Variable eingabefeld auf das Einga-
+        befeld. Die Eigenschaften value des Eingabefelds beinhalten den eingetragenen
+        Text. Dieser Text wird im Dialogfeld ausgegeben-->
+      <p><input id="idButton" type="button" value="Klick"></p>
+        <!--Die Variable ausgabefeld verweist auf das Eingabefeld, das zur Ausgabe
+        genutzt wird. Der Eigenschaft value kann auch ein Wert zugewiesen werden.
+        Damit ändert sich der Inhalt des Eingabefelds.-->
+      <p><input id="idAusgabe" disabled> Ausgabe</p>
+        <!--Der Wert des Attributs id dient als eindeutige Indifikation (kurz: ID)
+        des Elements im Dokuments. Diese ID wird für den Zugriff auf das Element und 
+        die Verbindung zum JavaScript-Programmcode benötigt.-->
+   </form>
+   
+   <script>
+      /*Im unteren script-Container wird die Methode getElementById() des
+      document-Objekts aufgerugen. Sie erwartet als Parameter die ID eines
+      Elements und liefert einen Verweis auf ein Objekt zurück, das diese
+      Element repräsentiert. Dieser Verweis wird hier in der Variablen bu
+      gespeichert. Die Variable bu verweist damit auf die Schaltfläche.*/
+      const bu = document.getElementById("idButton");
+      /*Ein EventListener registriert ein Ereignis und reagiert dadrauf. 
+      Die Methode addEventListener() des elemet-Objekts verbindet ein 
+      Element des Dokuments mit einem bestimmten Ereignis und mit einem
+      Verweis auf eine benannte oder eine anonyme Funktion. Im
+      vorliegenden Fakk bedeutet dass: Der Benutzer klickt auf den Button
+      bu, löst damit das Ereignis click aus und damit einen Aufruf der
+      benannten Funktion geklickt().*/
+      bu.addEventListener("click", geklickt);
+      
+   </script>
+</body>
+</html>

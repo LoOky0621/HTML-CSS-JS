@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Objekt in Objekt</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            class Motor
+            {
+                constructor(l, z, k)
+                {
+                    this.leistung = l;
+                    this.zylinder = z;
+                    this.kraftstoff = k;
+                }
+
+                tunen(x)
+                {
+                    this.leistung += x;
+                }
+
+                toString()
+                {
+                    return "Leistung: " + this.leistung + ", Zylinder: "
+                        + this.zylinder + ", Kraftstoff: " + this.kraftstoff;
+                }
+            }
+            class Fahrzeug
+            {
+                    constructor(f, g, a)
+                    {
+                        this.farbe = f;
+                        this.geschwindigkeit = g;
+                        this.antrieb = a;
+                    }
+
+                    toString()
+                    {
+                        return "Farbe: " + this.farbe + "; Geschwindigkeit: "
+                            + this.geschwindigkeit + ", Antrieb: " + this.antrieb;
+                    }
+            }
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            const dacia = new Fahrzeug("Rot", 50,
+                new Motor(60, 4, "Diesel"));
+            //dacia.antrieb.tunen(10);
+            document.write(dacia + "<br>");
+
+            dacia.antrieb.leistung = 80;
+            dacia.antrieb.zylinder = 6;
+            dacia.antrieb.kraftstoff = "Benzin";
+            document.write(dacia);
+            
+
+        </script>      
+    </body>
+</html>      

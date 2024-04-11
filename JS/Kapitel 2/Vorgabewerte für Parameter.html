@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Vorgabewerte für Parameter</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            function addieren(a, b, c = 0, d = 0)
+            {
+                const summe = a + b + c + d;
+                return summe;
+            }
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            document.write("Summe: " + addieren(3, 5) + "<br>");
+            document.write("Summe: " + addieren(3, 5, 4) + "<br>");
+            document.write("Summe: " + addieren(3, 5, 4, 9));
+            /*Die Funktion addieren() dient zum Addieren von zwei, drei oder vier
+            Werten. Die beiden letzten Parameter haben den Vorgabewert 0, daher 
+            wird die Summe nicht verfälscht. */
+
+        </script>      
+    </body>
+</html>      

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Funktionen mit Parametern</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            function ausgeben(land, stadt)
+            {
+                document.write("Die Hauptstandt von "
+                + land + " ist " + stadt + "<br>");
+            }
+
+            /* Es wird eine Funktion mit dem Namen ausgeben() definiert. Sie besitzt
+            zwei Parameter mit den Bezeichnungen land und stadt, durch Komma vonei-
+            nander getrennt. Die jeweils aktuellen Werte der beiden Parameter werden
+            genutzt, um einen Satz zusammenzustellen und auszugeben. */
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            const a = "Spanien", b = "Madrid";
+            ausgeben(a ,b);
+            ausgeben("Frankreich", "Paris");
+
+            /* An eine Funktion können sowohl Variablen als auch Werte übermittelt wer-
+            den. Die Funktion ausgeben() wird zweimal aufgerufen: beim ersten Mal mit
+            den beiden Variablen a und b, beim zweiten Mal mit zwei Zeichenketten. Bei
+            jedem Aufruf springt das Programm zur Funktion, übergibt die beiden Para-
+            meter in der gegeben Reihenfolge an die Variable land und stadt und führt
+            den Inhalt der Funktion aus. */
+
+        </script>      
+    </body>
+</html>      

@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Methoden</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            class Fahrzeug
+            {
+                constructor(f, g)
+                {
+                    this.farbe = f;
+                    this.geschwindigkeit = g;
+                }
+                
+                /*Die Methode beschleunigen() erwartet einen Zahlenwert. Dieser dient zum 
+                Ändern des Werts der Eigenschaft geschwindigkeit. Die Methode lackieren()
+                erwartet eine Zeichenkette, die den neuen Wert Eigenschaft farbe darstellt.*/
+                beschleunigen(wert)
+                {
+                    this.geschwindigkeit += wert;
+                }
+
+                lackieren(f)
+                {
+                    this.farbe = f;
+                }
+
+                /*Die Methode toString() liefert eine Zeichenkette, die die Werte aller
+                Eigenschaften des Objekts enthält, und dient zur Ausgabe eines Objekts.*/
+                toString()
+                {
+                    return "Farbe: " + this.farbe
+                        + ", Geschwindigkeit: " + this.geschwindigkeit;
+                }
+            }
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            const dacia = new Fahrzeug("Rot", 50);
+            document.write("Farbe: " + dacia.farbe
+            + ", Geschwindigkeit: " + dacia.geschwindigkeit + "<br>");
+
+            dacia.beschleunigen(35);
+            dacia.lackieren("Blau");
+            document.write(dacia);
+            
+
+        </script>      
+    </body>
+</html>      

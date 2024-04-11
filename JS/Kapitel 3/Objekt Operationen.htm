@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Objket Operationen</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      class Fahrzeug
+      {
+         constructor(f, g)
+         {
+            this.farbe = f;
+            this.geschwindigkeit = g;
+         }
+
+         beschleunigen(wert)
+         {
+            this.geschwindigkeit += wert;
+         }
+
+         lackieren(f)
+         {
+            this.farbe = f;
+         }
+
+         toString()
+         {
+            return "Farbe: " + this.farbe
+               + ", Geschwindigkeit: " + this.geschwindigkeit;
+         }
+      }
+   </script>
+</head>
+<body><p>
+   <script>
+      const dacia = new Fahrzeug("Rot", 50);
+      document.write("Schreibweise mit Punkt: " + dacia.farbe + " "
+         + dacia.geschwindigkeit + "<br>");
+      document.write("Schreibweise mit [ und ]: " + dacia["farbe"]
+         + " " + dacia["geschwindigkeit"] + "<br>");
+      document.write("Schreibweise mit toString(): "
+         + dacia + "<br><br>");
+
+      /*Sie können mithilfe der beiden Vergleichsoperatoren == bzw. !=
+      prüfen, ob zwei Variable auf dasselbe Objekt verweisen.*/   
+      const renault = dacia; 
+      //Zwei Variablen, die auf dassselbe Objekt verweisen
+      document.write("Zweiter Verweis: " + renault + "<br>");
+      if(renault == dacia)
+         document.write("Dasselbe Objekt<br>");
+      const simca = new Fahrzeug("Rot", 50);
+      /*Zwei Variablen, die auf zwei verschiedene Objekte mit demselben
+      Eigenschaften und Eigenschaftswerten verweisen*/
+      if(simca != dacia)
+         document.write("Nicht dasselbe Objekt<br><br>");
+
+      if(dacia instanceof Fahrzeug)
+         document.write("instanceof:<br>Objekt "
+            + " ist Instanz der Klasse<br><br>");
+
+         /*Die Klasse Fahrzeug und die beiden Methoden beschleunigen()
+         und lackieren() den Typ function haben. Das Objekt dacia hat
+         den Typ object. Die beiden Eigenschaften sind einfache
+         Variablen des Typs string bzw.number*/
+         document.write("typeof:<br>"
+         + "Fahrzeug: " + typeof Fahrzeug + "<br>"
+         + "dacia: " + typeof dacia + "<br>"
+         + "farbe: " + typeof dacia.farbe + "<br>"
+         + "geschwindigkeit: "
+         + typeof dacia.geschwindigkeit + "<br>"
+         + "beschleunigen: " + typeof dacia.beschleunigen + "<br>"
+         + "lackieren: " + typeof dacia.lackieren + "<br><br>");
+
+      /*Mithilfe des Operators in prüfen Sie, ob eine Klasse ein bestimmtes
+      Member, also eine bestimmte Eigenschaft oder Methode, besitzt.*/
+      document.write("in:<br>");
+      if("farbe" in dacia)
+         document.write("farbe ist Member<br>");
+      if("beschleunigen" in dacia)
+         document.write("beschleunigen ist Member<br>");
+      if("lackieren" in dacia)
+         document.write("lackieren ist Member<br>");
+      if(!("leistung" in dacia))
+         document.write("leistung ist kein Member<br><br>");
+
+      /*Sie können eine Variable, die einen Verweis auf ein Objekt darstellt, als
+      Parameter an eine Funktion übergeben. Innerhalb der Funktion können Sie
+      das Objekt ändern bzw. Methoden des Objekts aufrufen.*/      
+      function aendern(x)
+      {
+         x.beschleunigen(10);
+         return x;
+         /*Sie können auch eine Variable, die einen Verweis auf ein Objekt darstellt,
+         als Rückgabewert asu einer Funktion zurückliefern und einer weitern Variable
+         zuweisen.*/
+      }
+      const lada = aendern(dacia);
+      document.write(lada + "<br><br>");
+
+      /*Sie können einzelne Eigenschaften eines Objekts mithilfe des Operators delete
+      löschen. Die Eigenschaften andere Objekte derselben Klasse sind davon nicht
+      betroffen. Daas hat allerdings den Nebeneffekt, dass sich die Objekte nicht mehr
+      ähnlich sind.*/
+      delete dacia.geschwindigkeit;
+      document.write("Werte der Member:<br>"
+         + "farbe: " + dacia.farbe + "<br>"
+         + "geschwindigkeit: " + dacia.geschwindigkeit + "<br>"
+         + "lackieren: " + dacia.lackieren + "<br>"
+         + "leistung: " + dacia.leistung);
+   </script></p>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Parametern ändern</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            /* Parameter können innerhalb einer Funktion geändert werden. Abhänging
+            von der Art des Parameters hat diese Änderung eine Rückwirkung auf die 
+            Variablen, mit denen die Funktion aufgerufen wurde.*/
+            function ausgeben(z, t, f, p)
+            {
+                document.write(z + ", " + t + ", " + f + ", " + p + "<br>");
+            }
+            /* Eine Variable eines einfachen Datentypes, wie z. B. Zeichenkette,
+            Zahl oder Wahrheitswert, wird per Wert übergeben. Die Variable in der
+            Funktion ist eine Kopie. Eine Änderung der Kopie hat keine Auswirkung
+            auf den Wert des Originals.*/
+            function aendern(z, t, f, p)
+            {
+                z = 4711;
+                t = "Guten Tag ";
+                f = false;
+
+                p[0] = "Bernd ";
+                document.write("In der Funktion, Element geändert: ");
+                document.write(p + "<br>");
+
+                p = ["Sarah ", "Uli ", "Tim "];
+                document.write("in er Funktion, Array neu erstellt: ");
+                document.write(p + "<br>");
+            }
+            /* EIne Variable eines nicht-einfachen Datentypes, wie z. B. eines Felds, wird
+            per Verweis übergeben. In der Funktion stellt die Variable eine Kopie des
+            Verweises auf das Originalfeld dar. Die Elemete des Originalfelds können geändert
+            werden. Wird der Variablen aber ein anderes Feld zugewiesen, so hat das kleine 
+            Auswirkung auf das Originalfeld. Dasselbe Verhalten zeigen Objekte.*/
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            const zahl = 42, tx = "Hallo ", fertig = true,
+                person = ["Peter ", "Monika ", "Hans "];
+            document.write("Vor dem Aufruf: ");
+            ausgeben(zahl, tx, fertig, person);
+            /* Die Variable z ist eine Kopie der Variablen zahl. Eine Änderung
+            von z hat keine Auswirkung auf zahl. Dasselbe gilt bei der Übergabe
+            der Variablen tx und fertig an t und f.*/
+            
+            aendern(zahl, tx, fertig, person);
+            document.write("Nach dem Aufruf: ");
+            ausgeben(zahl, tx, fertig, person);
+            /* Die Variable p ist eine Kopie der Variablen person. Damit verweist
+            p auf das Orignialfeld person. Die Änderung des ersten Feldelements 
+            bleibt erhalten. Wird p aber ein anderes Feld zugewiesen, wirkt sich 
+            das nur auf p aus, aber nicht auf das Originalfeld person.*/
+
+        </script>      
+    </body>
+</html>      

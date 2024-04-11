@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Schleife und Felder</title>
+        <link rel ="stylesheet" href="js4.css">
+    </head>
+    <body>
+        <script>
+            
+            let person;
+            person = ["Peter", "Monika", "Hans"];
+
+            document.write("<table>");
+            for(let z = 0; z < 3; z++)
+                document.write("<tr><td>" + person[z] + "</td></tr>");
+            document.write("</table>");
+            document.write("<br>");
+            
+            const alter = [["Peter", 37], ["Monika", 35], ["Hans", 32]];
+
+            document.write("<table>");
+            for(let z = 0; z < 3; z++)
+            {
+                document.write("<tr>");
+                for(let s=0; s<2; s++)
+                document.write("<td>" + alter[z][s] + "</td>"); 
+                document.write("</tr>");   
+            } 
+            document.write("</table>");   
+            
+        </script>      
+    </body>
+</html>      

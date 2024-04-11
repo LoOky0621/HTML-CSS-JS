@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Gültigkeitsbereich von Variablen</title>
+        <link rel ="stylesheet" href="js4.css">
+        <script>
+
+            function oskar(x)
+            {
+                /*Innerhalb der Funktion wird eine weitere Variable mit dem Namen a deklariert. Sie 
+                blendet die oben genannte gleichnamige Variable aus und ist in der gesamten Funktion 
+                gültig.*/
+                const a = 52;
+                const d = 45;
+                document.write("In einer Funktion: a:" + a + ", b:" + b
+                    + ", x:" + x + ", d:" + d + "<br>");
+                /*Die Variable x in der Funktion oskar() ist eine Kopie von c und nur innerhalb der
+                Funktion gültig.*/    
+
+                if(true)
+                {
+                    const a = 62;
+                    document.write("in einem Block: a:" + a + ", b:" + b
+                        + ", x:" + x + ", d:" + d + "<br>");
+                    /* Innerhalb des Blocks nach dem if wird wiederum eine Variable mit dem Namen a 
+                    deklariert. Sie blendet alle oben genannten gleichnamigen Variablen aus und ist im
+                    gesamten if-Block gültig.*/    
+                }    
+            }
+
+        </script>
+    </head>
+    <body><p>
+        <script>
+            
+            const a = 42;
+            const b = 43;
+            const c = 44;
+            document.write("Im gesamten Programm: a:"
+                + a + ", b:" + b + ", c:" + c + "<br>")
+            
+            oskar(c);    
+
+        </script>      
+    </body>
+</html>      

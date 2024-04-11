@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>
+        Formular
+    </title>
+</head>
+
+<body>
+    <form action="">
+        <!-- Hier stehen die Eingabefelder -->
+        <p><input type="text" name="land" size="40" value="Deutschland"></p>
+        <!--    
+            type="text" Texteingabefeld
+            name="land" Name des Feldes
+            size="40" legt die Textlänge fest
+            value="Deutschland" Anzeigewert
+        -->
+
+        <p><input type="password"></p><!-- Textfeld wo die Eingabe zu * wird -->
+        <p><input type="hidden" value="zu uebertragende Informationen"></p><!-- Unsichtbares Eingabefeld -->
+        <p><textarea name="tipp" cols="50" rows="10"></textarea></p>
+        <!--
+            Formularelement textarea ist ein textfeld für größere Eingaben
+            Die Attribute cols und rows definieren die Höhe und Breite
+            des Eingabefeldes.
+        -->
+        <p>E-Mail<input type="text" name="email" size="40"></p><!-- Schlechterstyle -->
+        <p>
+            <label for="email">Email</label><br>
+            <input type="text" name="email" size="40">
+        </p>
+        <p>
+            <input type="submit" name="Abschicken" value="Senden">
+            <!-- Dient zur Daten Weiterverarbeitung -->
+            <input type="reset" name="Abbrechen" value="Abbrechen">
+            <!-- Standartwerte zurücksetzem -->
+            <input type="button" name="pruefen" value="Pruefe Eingabe">
+            <!-- Dient zur auslösung möglicher Javascript Anweisungen -->
+        </p>
+    </form>
+</body>
+
+</html>

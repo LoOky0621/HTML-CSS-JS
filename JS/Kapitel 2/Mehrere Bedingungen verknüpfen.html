@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Mehrere Bedingungen verknüpfen</title>
+        <link rel ="stylesheet" href="js4.css">
+    </head>
+    <body>
+        <script>
+            
+              const a = 12;
+
+              if(a >= 10 && a <= 20)
+               document.write("<p>1: zwischen 10 und 20</p>");
+              else 
+               document.write("<p>1: nicht zwischen 10 und 20</p>");
+                /* Im ersten Fall wird geprüft, ob die Zahl größer 
+                gleich 10 und kleiner gleich 20 ist, also ob sie im 
+                Zahlenbereich von 10 bis 20 liegt.*/
+
+              if(a < 10 || a > 20)
+               document.write("<p>2: nicht zwischen 10 und 20</p>"); 
+              else
+               document.write("<p>2: zwischen 10 und 20</p>");
+                /* Der zweite Fall testet, ob die Zahl kleiner als 
+                10 oder größer als 20 ist, also ausßerhalb des 
+                Zahlenbereichs liegt.*/
+
+              if(!(a >= 10 && a <= 20))
+               document.write("<p>3: nicht zwischen 10 und 20</p>");
+              else
+               document.write("<p>3: zwischen 10 und 20</p>")
+               /* Mithilfe des Operators ! wird im dritten Fall 
+               festgestellt, ob die Zahl nicht im Zahlenbereich 
+               zwischen 10 und 20 liegt.*/
+
+        </script>      
+    </body>
+</html>      

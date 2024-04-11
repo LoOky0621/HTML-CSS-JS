@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Gedächtnistraining</title>
+        <link rel ="stylesheet" href="js4.css">
+    </head>
+    <body>
+        <script>
+            
+            let zaehler = 0, laenge = 3, text, eingabe, ausgabe = "";
+
+            /* In der Variablen "text" werden die zufälligen Zifferfolgen gespeichert. In
+            "laenge" steht die aktuelle Länge der Zifferfolge und in "zaehler" die informa-
+            tion, ob es sich um die erste, zweite oder dritte Ziffernfolge derselben Länge
+            handelt. */
+           
+            alert("Gedächtnis-Training:\n\nMerken Sie sich die Ziffernfolge," 
+            + " die gleich erscheinen, und geben Sie sie anschließend ein."
+            + " Es erscheinen zunächst dreimal drei Ziffern, dann dreimal"
+            + " vier Ziffern usw. Sobald Sie eine Zifferfolge"
+            + " flasch eingegeben haben, ist das Ende des Trainigs"
+            + " erreicht, und es erfolgt eine Bewertung. Wenn Sie die"
+            + " Internetseite aktualisieren, beginnt das Training wieder"
+            + " von vorn.");
+
+            do
+            {
+                /* Die do_while-Schleife läuft, solange die Eingabe und die Zifferfolge über-
+                einstimmen. Der Wert von "zaehler" wird jedes Mal erhöht. Wird der Wert 3
+                überschritten, wird der Wert wieder auf 1 gesetzt. Gleichzeitig erhöht sich 
+                dann der Wert von "laenge". Auf diese Weise wird erreicht, das dreimal eine
+                Zifferfolge derselben Länge erschint. */
+
+                zaehler++;
+                if(zaehler > 3)
+                {
+                    laenge++;
+                    zaehler = 1;
+                }
+
+                text = "";
+                for(let i = 1; i <= laenge; i++)
+                    text += Math.floor(Math.random() * 10);
+                alert("Ziffernfolge: " + text);
+                
+                /* Mithilfe der for-Schleife wird eine zufällige Ziffernfolge der aktuellen
+                Länge zusammengestellt. Diese wird ausgegeben, anschließend erfolgt die 
+                Eingabe des Benutzers. */
+
+                eingabe = prompt("Ihre Eingabe");
+                ausgabe += text + "<br>";
+            }
+            while(eingabe == text);
+
+            
+            let anzahl = laenge -1;
+            if(anzahl < 3)
+                anzahl = 0;
+            ausgabe += "Sie konnten sich " + anzahl + "Ziffern merken";
+            document.write(ausgabe);    
+            
+            /* Nach Ende der Schleife, also nachdem eine Zifferfolge falsch eingegeben
+            wird, erscheint das Ergebnis. Es handelt sich dabei um eine Liste aller zu 
+            merkenden Zifferfolgen. Am Ende folgt eine Information über die größte 
+            Länge der Ziffernfolge, die sich der Benutzer dreimal erfolgreich merken
+            konnte.*/
+            
+        </script>      
+    </body>
+</html>      

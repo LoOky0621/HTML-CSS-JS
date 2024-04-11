@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Eigenschaften</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      function Fahrzeug(f, g)
+      {
+         this.farbe = f;
+         this.geschwindigkeit = g;
+      }
+   </script>
+</head>
+<body>
+   <p><script>
+      const dacia = new Fahrzeug("Rot", 50);
+      document.write("Farbe: " + dacia.farbe
+        + ", Geschwindigkeit: " + dacia.geschwindigkeit + "<br>");
+
+      dacia.geschwindigkeit = 75;
+      document.write("Farbe: " + dacia.farbe
+         + ", Geschwindigkeit: " + dacia.geschwindigkeit + "<br>");
+
+      let renault = new Fahrzeug("Gelb", 65);
+      renault = new Fahrzeug("Blau", 85);
+      document.write("Farbe: " + renault.farbe
+         + ", Geschwindigkeit: " + renault.geschwindigkeit);
+   </script></p>
+</body>
+</html>
